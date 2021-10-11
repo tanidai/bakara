@@ -19,7 +19,6 @@ def Bakara_(mny,bet):
             bn.append(bn_0)
             torannpu.remove(bn_0)
 
-        
     for i in pl:
         pl_1 = i[0]
         if pl_1 == "J" or pl_1 == "Q" or pl_1 == "K" or pl_1 == "1":
@@ -47,7 +46,6 @@ def Bakara_(mny,bet):
         bn_2 = bn_deta-10
     else:
         bn_2 = bn_deta
-
 
 
     if pl_2 >=8 or bn_2 >= 8:
@@ -103,7 +101,6 @@ def Bakara_(mny,bet):
             bn_2 += 1
         else:
             bn_2 += int(bn_4)
-
 
     elif pl_2 <= 5:
         pl_3  = random.choice(torannpu)
