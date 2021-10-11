@@ -117,7 +117,7 @@ def Bakara_(mny,bet):
         if pl_2 >= 8:
             pass
 
-        elif (pl_2 >= 0 and pl_2 <= 8 and bn_2 == 3) or (pl_2 >= 2 and pl_2 <= 7 and bn_2 == 4) or (pl_2 >= 4 and pl_2 <= 7 and bn_2 == 5) or (pl_2 == 6 and pl_2 == 7 and bn_2 == 6):
+        elif (pl_2 >= 0 and pl_2 < 8 and bn_2 == 3) or (pl_2 >= 2 and pl_2 <= 7 and bn_2 == 4) or (pl_2 >= 4 and pl_2 <= 7 and bn_2 == 5) or (pl_2 == 6 or pl_2 == 7 and bn_2 == 6):
             bn_3 = random.choice(torannpu)
             bn.append(bn_3)
             torannpu.remove(bn_3)
