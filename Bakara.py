@@ -1,16 +1,18 @@
 import random
-def Bakara_(mny,bet):
-    bn_deta= 0
-    pl_deta= 0
-    pl = []
-    bn = []
+def toranpu_():
+    
     torannpu = []
     suuti = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
     ma_ku = ["♡","♤","♧","♢"]
     for i in suuti:
         for j in ma_ku:
             torannpu.append(i+j)
-
+    return torannpu
+def Bakara_(mny,bet,torannpu):
+    bn_deta= 0
+    pl_deta= 0
+    pl = []
+    bn = []
     for i in range(2):
             pl_0 = random.choice(torannpu)
             pl.append(pl_0)
@@ -20,6 +22,7 @@ def Bakara_(mny,bet):
             torannpu.remove(bn_0)
 
     for i in pl:
+  
         pl_1 = i[0]
         if pl_1 == "J" or pl_1 == "Q" or pl_1 == "K" or pl_1 == "1":
             pl_deta += 0
@@ -164,4 +167,6 @@ def Bakara_(mny,bet):
 
 mny = int(input("賭け金を >"))
 bet =int(input("対象を バンカー:1 プレイヤー:2　タイ:3 >"))
-Bakara_(mny,bet)
+torannpu = toranpu_()
+Bakara_(mny,bet,torannpu)
+print(torannpu)
