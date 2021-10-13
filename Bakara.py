@@ -90,7 +90,7 @@ def hanntei_2(mny,bet,cs):
         else:
             print("賞金なし")
     elif cs == 2:
-        print("プレオやーの勝利")
+        print("プレイヤーの勝利")
         if bet == 2:
             print("賞金" + str(mny * 2))
         else:
