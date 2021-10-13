@@ -7,7 +7,6 @@ def toranpu_():
         for j in ma_ku:
             torannpu.append(i+j)
     return torannpu
-
 def haihu_(torannpu,fs_list):
     fs_deta = 0
     fs = random.choice(torannpu)
@@ -20,7 +19,6 @@ def haihu_(torannpu,fs_list):
     else:
         fs_deta = int(fs[0])
     return  fs_deta,fs_list
-
 def haihu_2():
     tes = []
     sc_1,sc_list = haihu_(torannpu, tes)
@@ -31,7 +29,6 @@ def haihu_2():
     else:
         sc_deta = sc_deta
     return sc_deta,sc_list
-
 def hanntei_(pl,bn,pl_list,bn_list):
     if (pl >= 8 or bn >= 8) or (pl >= 6 and bn >= 6):
         if bn > pl:
@@ -53,33 +50,27 @@ def hanntei_(pl,bn,pl_list,bn_list):
         if pl <= 5 and bn == 7:
             pl_3,pl_list= haihu_(torannpu,pl_list)
             pl += int(pl_3)
-
         elif pl == 6 or pl == 7 and bn <= 5:
             bn_3,bn_list= haihu_(torannpu,bn_list)
             bn += int(bn_3)
-
         elif pl <= 5 and bn <= 2:
             pl_3,pl_list= haihu_(torannpu,pl_list)
             pl += int(pl_3)
 
             bn_3,bn_list= haihu_(torannpu,bn_list)
             bn += int(bn_3)
-
         elif pl <= 5:
             pl_3,pl_list= haihu_(torannpu,pl_list)
             pl += int(pl_3)
-
             if pl >= 8:
                 pass
             elif (pl >= 0 and pl < 8 and bn == 3) or (pl >= 2 and pl <= 7 and bn == 4) or (pl >= 4 and pl <= 7 and bn == 5) or (pl == 6 or pl == 7 and bn == 6):
                 bn_3,bn_list= haihu_(torannpu,bn_list)
                 bn += int(bn_3)
-
         if pl >= 10:
             pl_rst = pl-10
         else:
             pl_rst = pl
-
         if bn >= 10:
             bn_rst = bn -10
         else:
@@ -92,7 +83,6 @@ def hanntei_(pl,bn,pl_list,bn_list):
         else:
             cs = 3
     return cs,pl_rst,bn_rst,pl_list,bn_list
-     
 def hanntei_2(mny,bet,cs):
     if mny > 0:
         if cs == 1:
@@ -125,7 +115,6 @@ def hanntei_2(mny,bet,cs):
                 print("賞金" + str(int(mny * 195 / 100 )))
             else:
                 print("賞金なし")
-
 mny = int(input("賭け金を >"))
 bet =int(input("対象を バンカー:1 プレイヤー:2　タイ:3 >"))
 torannpu = toranpu_()
