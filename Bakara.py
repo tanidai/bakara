@@ -99,24 +99,32 @@ def hanntei_2(mny,bet,cs):
             print("バンカーの勝利")
             if bet == 1:
                 print("賞金" + str(int(mny * 195 / 100 )))
+            else:
+                print("賞金なし")
         elif cs == 2:
-            print("バンカーの勝利")
+            print("プレオやーの勝利")
             if bet == 2:
                 print("賞金" + str(mny * 2))
+            else:
+                print("賞金なし")
         elif cs == 3:
-            print("バンカーの勝利")
+            print("引き分け")
             if bet == 3:
                 print("賞金" + str(mny * 9))
+            else:
+                print("賞金なし")
         elif cs == 4:
             print("プレイヤーのナチュラルウィン")
             if bet == 2:
                 print("賞金" + str(mny * 2))
+            else:
+                print("賞金なし")
         elif cs == 5:
             print("バンカーのナチュラルウィン")
             if bet == 1:
                 print("賞金" + str(int(mny * 195 / 100 )))
-    else:
-        print("賞金なし")
+            else:
+                print("賞金なし")
 
 mny = int(input("賭け金を >"))
 bet =int(input("対象を バンカー:1 プレイヤー:2　タイ:3 >"))
