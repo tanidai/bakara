@@ -56,7 +56,6 @@ def hanntei_(pl,bn,pl_list,bn_list):
         elif pl <= 5 and bn <= 2:
             pl_3,pl_list= haihu_(torannpu,pl_list)
             pl += int(pl_3)
-
             bn_3,bn_list= haihu_(torannpu,bn_list)
             bn += int(bn_3)
         elif pl <= 5:
@@ -64,7 +63,7 @@ def hanntei_(pl,bn,pl_list,bn_list):
             pl += int(pl_3)
             if pl >= 8:
                 pass
-            elif (pl >= 0 and pl < 8 and bn == 3) or (pl >= 2 and pl <= 7 and bn == 4) or (pl >= 4 and pl <= 7 and bn == 5) or (pl == 6 or pl == 7 and bn == 6):
+            elif (pl < 8 and bn == 3) or (pl >= 2 and pl <= 7 and bn == 4) or (pl >= 4 and pl <= 7 and bn == 5) or (pl == 6 or pl == 7 and bn == 6):
                 bn_3,bn_list= haihu_(torannpu,bn_list)
                 bn += int(bn_3)
         if pl >= 10:
@@ -84,37 +83,36 @@ def hanntei_(pl,bn,pl_list,bn_list):
             cs = 3
     return cs,pl_rst,bn_rst,pl_list,bn_list
 def hanntei_2(mny,bet,cs):
-    if mny > 0:
-        if cs == 1:
-            print("バンカーの勝利")
-            if bet == 1:
-                print("賞金" + str(int(mny * 195 / 100 )))
-            else:
-                print("賞金なし")
-        elif cs == 2:
-            print("プレオやーの勝利")
-            if bet == 2:
-                print("賞金" + str(mny * 2))
-            else:
-                print("賞金なし")
-        elif cs == 3:
-            print("引き分け")
-            if bet == 3:
-                print("賞金" + str(mny * 9))
-            else:
-                print("賞金なし")
-        elif cs == 4:
-            print("プレイヤーのナチュラルウィン")
-            if bet == 2:
-                print("賞金" + str(mny * 2))
-            else:
-                print("賞金なし")
-        elif cs == 5:
-            print("バンカーのナチュラルウィン")
-            if bet == 1:
-                print("賞金" + str(int(mny * 195 / 100 )))
-            else:
-                print("賞金なし")
+    if cs == 1:
+        print("バンカーの勝利")
+        if bet == 1:
+            print("賞金" + str(int(mny * 195 / 100 )))
+        else:
+            print("賞金なし")
+    elif cs == 2:
+        print("プレオやーの勝利")
+        if bet == 2:
+            print("賞金" + str(mny * 2))
+        else:
+            print("賞金なし")
+    elif cs == 3:
+        print("引き分け")
+        if bet == 3:
+            print("賞金" + str(mny * 9))
+        else:
+            print("賞金なし")
+    elif cs == 4:
+        print("プレイヤーのナチュラルウィン")
+        if bet == 2:
+            print("賞金" + str(mny * 2))
+        else:
+            print("賞金なし")
+    elif cs == 5:
+        print("バンカーのナチュラルウィン")
+        if bet == 1:
+            print("賞金" + str(int(mny * 195 / 100 )))
+        else:
+            print("賞金なし")
 mny = int(input("賭け金を >"))
 bet =int(input("対象を バンカー:1 プレイヤー:2　タイ:3 >"))
 torannpu = toranpu_()
