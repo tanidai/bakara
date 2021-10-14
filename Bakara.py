@@ -78,6 +78,8 @@ def hanntei_(pl,bn,pl_list,bn_list):
             cs = 3
     return cs,pl_rst,bn_rst,pl_list,bn_list
 def hanntei_2(mny,bet,cs):
+    print("プレイヤー" + str(pl))
+    print("バンカー" + str(bn))
     print(rst[cs])
     if (cs == bet) or (cs == 4 and bet == 2) or (cs == 5 and bet == 1):
         print("賞金" + str(int(mny * bairitu[cs])))
@@ -90,8 +92,5 @@ pl,pl_list = haihu_2()
 bn,bn_list = haihu_2()
 cs,pl,bn,pl_list,bn_list = hanntei_(pl,bn,pl_list,bn_list)
 hanntei_2(mny,bet,cs)
-print(torannpu)
-print("プレイヤー" + str(pl))
-print("バンカー" + str(bn))
 print(pl_list)
 print(bn_list)
