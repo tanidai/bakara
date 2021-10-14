@@ -1,6 +1,12 @@
 import random
 rst ={1:"バンカーの勝利",2:"プレイヤーの勝利",3:"引き分け",4:"プレイヤーのナチュラルウィン",5:"バンカーのナチュラルウィン"}
 bairitu = {1:1.95,2:2,3:9,4:2,5:1.95}
+def keisann(x):
+    if x >= 10:
+        x_1 = x -10
+    else:
+        x_1 = x
+    return x_1
 def toranpu_():
     torannpu = []
     suuti = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
@@ -39,15 +45,8 @@ def hanntei_(pl,bn,pl_list,bn_list):
             cs = 4
         else:
             cs = 3
-        if pl >= 10:
-            pl_rst = pl-10
-        else:
-            pl_rst = pl
-
-        if bn >= 10:
-            bn_rst = bn -10
-        else:
-            bn_rst = bn
+        pl_rst = keisann(pl)
+        bn_rst = keisann(bn)
     else:
         if pl <= 5 and bn == 7:
             pl_3,pl_list= haihu_(torannpu,pl_list)
@@ -68,14 +67,8 @@ def hanntei_(pl,bn,pl_list,bn_list):
             elif (pl < 8 and bn == 3) or (pl >= 2 and pl <= 7 and bn == 4) or (pl >= 4 and pl <= 7 and bn == 5) or (pl == 6 or pl == 7 and bn == 6):
                 bn_3,bn_list= haihu_(torannpu,bn_list)
                 bn += int(bn_3)
-        if pl >= 10:
-            pl_rst = pl-10
-        else:
-            pl_rst = pl
-        if bn >= 10:
-            bn_rst = bn -10
-        else:
-            bn_rst = bn
+        pl_rst = keisann(pl)
+        bn_rst = keisann(bn)
 
         if bn_rst > pl_rst:
             cs = 1
