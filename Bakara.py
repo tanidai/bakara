@@ -1,4 +1,6 @@
 import random
+rst ={1:"バンカーの勝利",2:"プレイヤーの勝利",3:"引き分け",4:"プレイヤーのナチュラルウィン",5:"バンカーのナチュラルウィン"}
+bairitu = {1:1.95,2:2,3:9,4:2,5:1.95}
 def toranpu_():
     torannpu = []
     suuti = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
@@ -83,36 +85,11 @@ def hanntei_(pl,bn,pl_list,bn_list):
             cs = 3
     return cs,pl_rst,bn_rst,pl_list,bn_list
 def hanntei_2(mny,bet,cs):
-    if cs == 1:
-        print("バンカーの勝利")
-        if bet == 1:
-            print("賞金" + str(int(mny * 195 / 100 )))
-        else:
-            print("賞金なし")
-    elif cs == 2:
-        print("プレイヤーの勝利")
-        if bet == 2:
-            print("賞金" + str(mny * 2))
-        else:
-            print("賞金なし")
-    elif cs == 3:
-        print("引き分け")
-        if bet == 3:
-            print("賞金" + str(mny * 9))
-        else:
-            print("賞金なし")
-    elif cs == 4:
-        print("プレイヤーのナチュラルウィン")
-        if bet == 2:
-            print("賞金" + str(mny * 2))
-        else:
-            print("賞金なし")
-    elif cs == 5:
-        print("バンカーのナチュラルウィン")
-        if bet == 1:
-            print("賞金" + str(int(mny * 195 / 100 )))
-        else:
-            print("賞金なし")
+    print(rst[cs])
+    if (cs == bet) or (cs == 4 and bet == 2) or (cs == 5 and bet == 1):
+        print("賞金" + str(int(mny * bairitu[cs])))
+    else:
+        print("賞金なし")
 mny = int(input("賭け金を >"))
 bet =int(input("対象を バンカー:1 プレイヤー:2　タイ:3 >"))
 torannpu = toranpu_()
